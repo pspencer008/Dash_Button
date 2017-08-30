@@ -1,34 +1,34 @@
-The base of this is from here https://www.nathankowald.com/blog/2017/05/dash-button-with-raspberry-pi/
+# The base of this is from here https://www.nathankowald.com/blog/2017/05/dash-button-with-raspberry-pi/
 
-Install the required dependencies:
+## Install the required dependencies:
 
-# Update your software
+### Update your software
 sudo apt-get update && sudo apt-get upgrade
 
-# Install pydhcplib
+### Install pydhcplib
 sudo apt-get install python-pip
 sudo pip install pydhcplib
 
-Replace the script’s MAC address with yours
+### Replace the script’s MAC address with yours
 
-# Replace "50:f4:de:f1:3b:a0" with the MAC address you found in step 1
-# It needs to be lowercase, with a colon after every two characters
+Replace "50:f4:de:f1:3b:a0" with the MAC address you found in step 1
+It needs to be lowercase, with a colon after every two characters
 dashbuttons.register("50:f4:de:f1:3b:a0", do_something)
 
-Make your Python script executable
+### Make your Python script executable
 
 sudo chmod +x /home/pi/dashbutton.py
 
-Test the script
+### Test the script
 Your Python script should now be able to detect your Amazon Dash button presses. Test the Python script by running:
 
 sudo python /home/pi/dashbutton.py
 Press your button and you should see the message, “button has been pressed”.
 
-Update the do_something function to make it do something useful
+### Update the do_something function to make it do something useful
 
 
-Set the Python script to run on startup
+### Set the Python script to run on startup
 
 Edit /etc/rc.local
 
@@ -50,7 +50,7 @@ done
 exit 0
 
 
-Reboot and test your script
+### Reboot and test your script
 
 sudo shutdown -r now
 
